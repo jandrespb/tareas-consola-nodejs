@@ -22,11 +22,24 @@ const showAppMenu = () => {
 
     // we make a question to user
     readline.question('Select one option: ', (answerOption) =>{
-        console.log({answerOption});
+        readline.close();
+    })
+}
+
+const pauseAppMenu = () =>{ 
+       // const that we say and get information by the user type in our console
+       const readline = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    // we make a question to user
+    readline.question(`\nPush ${'ENTER'.blue} to continue\n`, (answerOption) =>{
         readline.close();
     })
 }
 
 module.exports = {
-    showAppMenu
+    showAppMenu,
+    pauseAppMenu
 }
