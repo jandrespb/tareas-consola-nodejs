@@ -13,6 +13,18 @@ const showAppMenu = () => {
     console.log(`${'5.'.green} Complete task(s)`);
     console.log(`${'6.'.green} Delete task`);
     console.log(`${'0.'.green} Exit\n`);
+
+    // const that we say and get information by the user type in our console
+    const readline = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    // we make a question to user
+    readline.question('Select one option: ', (answerOption) =>{
+        console.log({answerOption});
+        readline.close();
+    })
 }
 
 module.exports = {
