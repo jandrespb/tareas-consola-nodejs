@@ -1,6 +1,5 @@
-require('colors');
-
-const {showAppMenu, pauseAppMenu} = require('./helpers/mensajes');
+import { inquirerMenu } from './helpers/inquirer.js';
+import('colors');
 
 const main = async() => {
 
@@ -10,18 +9,10 @@ const main = async() => {
     
     do {
 
-        optionMenu = await showAppMenu();
+        optionMenu = await inquirerMenu();
         console.log({optionMenu});
-
-        // this conditional is when we put 0 on console, we leave our app
-        if(optionMenu !== '0')
-        await pauseAppMenu();
         
     } while (optionMenu !== '0');
-
-
-    //pauseAppMenu();
-
 } 
 
 main();
