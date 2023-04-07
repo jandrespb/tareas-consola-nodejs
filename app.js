@@ -1,4 +1,5 @@
 import { inquirerMenu, pauseMenu } from './helpers/inquirer.js';
+import {Task} from './models/task.js';
 import('colors');
 
 const main = async() => {
@@ -9,8 +10,11 @@ const main = async() => {
     
     do {
 
-        optionMenu = await inquirerMenu();
-        console.log({optionMenu});
+        // optionMenu = await inquirerMenu();
+        // console.log({optionMenu});
+
+        const task = new Task('Learn NodeJs');
+        console.log(task);
 
         await pauseMenu();
         
