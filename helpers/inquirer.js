@@ -1,6 +1,6 @@
 
 import inquirer from 'inquirer';
-import 'colors';
+import colors from 'colors';
 
 const questionsMenu = [
     {
@@ -48,7 +48,7 @@ const inquirerMenu = async () => {
     console.log('   Choose one option   '.green);
     console.log('========================\n'.green);
 
-    const optionMenu = await inquirer.prompt(questionsMenu);
+    const {optionMenu} = await inquirer.prompt(questionsMenu);
 
     return optionMenu;
 };
@@ -58,7 +58,7 @@ const pauseMenu = async () => {
     const questionPauseMenu = [
         {
             type: 'input',
-            name: 'Enter',
+            name: 'enter',
             message: `Push ${'ENTER'.blue} to continue`
         }
     ];
@@ -67,8 +67,32 @@ const pauseMenu = async () => {
     await inquirer.prompt(questionPauseMenu);
 }
 
+const readInput = async(message) => {
+
+    const question = [
+        {
+            type: 'input',
+            name: 'desc',
+            message,
+            validate (value) {
+
+                if(value.length === 0) {
+                    return 'Please insert a value';
+                }
+
+                return true;
+            }
+        }
+    ];
+
+    const {desc} = await inquirer.prompt(question);
+    
+    return desc;
+}
+
 
 export {
     inquirerMenu,
-    pauseMenu
+    pauseMenu,
+    readInput
 };
