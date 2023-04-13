@@ -5,7 +5,7 @@ import colors from 'colors';
 const questionsMenu = [
     {
         type: 'list',
-        name: 'option',
+        name: 'options',
         message: '¿What do you want?',
         choices: [
             {
@@ -48,9 +48,10 @@ const inquirerMenu = async () => {
     console.log('   Choose one option   '.green);
     console.log('========================\n'.green);
 
-    const {optionMenu} = await inquirer.prompt(questionsMenu);
+    // Desestructuarción name='options'
+    const {options} = await inquirer.prompt(questionsMenu);
 
-    return optionMenu;
+    return options;
 };
 
 const pauseMenu = async () => {
