@@ -23,6 +23,14 @@ class Tasks {
         this._list = {};
     }
 
+    // Load our tasks
+    loadTasksFromArray(tasks = []) {
+        
+        tasks.forEach(task => {
+            this._list[task.id] = task;
+        })
+    }
+
     // Create our task
     createTask(description = ''){
 

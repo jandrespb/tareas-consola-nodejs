@@ -15,7 +15,7 @@ const readDataBase = () => {
     // parseo string to Object:
     const data = JSON.parse(info);
 
-    console.log(data);
+    //console.log(data);
 
     return data;
 }

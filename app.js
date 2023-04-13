@@ -15,11 +15,9 @@ const main = async () => {
 
     // check if file data.JSON have almost one task
     if(readTaskDb){
-        // put a task
+        // load our tasks JSON
+        tasks.loadTasksFromArray(readTaskDb);
     }
-
-    // see our task on array when do -while clean readTaskDB
-    await pauseMenu();
 
     do {
 
@@ -41,7 +39,7 @@ const main = async () => {
         }
 
         // save our file.txt on folder db
-       // saveDataBase(tasks.listArr);
+        saveDataBase(tasks.listArr);
 
         await pauseMenu();
 
