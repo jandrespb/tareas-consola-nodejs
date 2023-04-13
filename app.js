@@ -3,12 +3,23 @@ import {inquirerMenu,
         readInput} from './helpers/inquirer.js';
 import { Tasks } from './models/tasks.js';
 import {saveDataBase} from './db/saveFile.js';
+import {readDataBase} from './db/readFileDb.js';
 import colors from 'colors';
 
 const main = async () => {
 
     let optionMenu = '';
     const tasks = new Tasks();
+
+    const readTaskDb = readDataBase();
+
+    // check if file data.JSON have almost one task
+    if(readTaskDb){
+        // put a task
+    }
+
+    // see our task on array when do -while clean readTaskDB
+    await pauseMenu();
 
     do {
 
@@ -30,7 +41,7 @@ const main = async () => {
         }
 
         // save our file.txt on folder db
-        saveDataBase(tasks.listArr);
+       // saveDataBase(tasks.listArr);
 
         await pauseMenu();
 
