@@ -2,11 +2,10 @@ import {inquirerMenu,
         pauseMenu,
         readInput} from './helpers/inquirer.js';
 import { Tasks } from './models/tasks.js';
+import {saveDataBase} from './db/saveFile.js';
 import colors from 'colors';
 
 const main = async () => {
-
-    console.log('Hello World');
 
     let optionMenu = '';
     const tasks = new Tasks();
@@ -29,6 +28,9 @@ const main = async () => {
                 console.log(tasks.listArr);
                 break;
         }
+
+        // save our file.txt on folder db
+        saveDataBase(tasks.listArr);
 
         await pauseMenu();
 
