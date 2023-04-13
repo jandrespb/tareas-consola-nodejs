@@ -1,4 +1,6 @@
-import {inquirerMenu,pauseMenu,readInput} from './helpers/inquirer.js';
+import {inquirerMenu,
+        pauseMenu,
+        readInput} from './helpers/inquirer.js';
 import { Tasks } from './models/tasks.js';
 import colors from 'colors';
 
@@ -18,7 +20,7 @@ const main = async () => {
             case '1':
                 // Create option task
                 const description = await readInput('Description: ');
-                console.log(description);
+                tasks.createTask(description);
                 break;
 
             case '2':
