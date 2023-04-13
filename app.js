@@ -13,6 +13,7 @@ const main = async () => {
 
     do {
 
+        // Print principal menu
         optionMenu = await inquirerMenu();
 
         // this switch select what option our menu we will do
@@ -25,7 +26,7 @@ const main = async () => {
 
             case '2':
                 // list option task
-                console.log(tasks._list);
+                console.log(tasks.listArr);
                 break;
         }
 
